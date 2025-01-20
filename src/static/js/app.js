@@ -90,7 +90,7 @@ function AddItemForm({ onNewItem }) {
     };
 
     return (
-        <>
+        <div>
             <h1 className="text-center mb-4">ToDo App by take000</h1>
             <Form onSubmit={submitNewItem}>
                 <InputGroup className="mb-3">
@@ -113,7 +113,7 @@ function AddItemForm({ onNewItem }) {
                     </InputGroup.Append>
                 </InputGroup>
             </Form>
-        </>
+        </div>
     );
 }
 
