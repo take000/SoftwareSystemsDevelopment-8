@@ -90,27 +90,30 @@ function AddItemForm({ onNewItem }) {
     };
 
     return (
-        <Form onSubmit={submitNewItem}>
-            <InputGroup className="mb-3">
-                <Form.Control
-                    value={newItem}
-                    onChange={e => setNewItem(e.target.value)}
-                    type="text"
-                    placeholder="New Item"
-                    aria-describedby="basic-addon1"
-                />
-                <InputGroup.Append>
-                    <Button
-                        type="submit"
-                        variant="success"
-                        disabled={!newItem.length}
-                        className={submitting ? 'disabled' : ''}
-                    >
-                        {submitting ? 'Adding...' : 'Add Item'}
-                    </Button>
-                </InputGroup.Append>
-            </InputGroup>
-        </Form>
+        <>
+            <h1 className="text-center mb-4">ToDo App by take000</h1>
+            <Form onSubmit={submitNewItem}>
+                <InputGroup className="mb-3">
+                    <Form.Control
+                        value={newItem}
+                        onChange={e => setNewItem(e.target.value)}
+                        type="text"
+                        placeholder="New Item"
+                        aria-describedby="basic-addon1"
+                    />
+                    <InputGroup.Append>
+                        <Button
+                            type="submit"
+                            variant="success"
+                            disabled={!newItem.length}
+                            className={submitting ? 'disabled' : ''}
+                        >
+                            {submitting ? 'Adding...' : 'Add Item'}
+                        </Button>
+                    </InputGroup.Append>
+                </InputGroup>
+            </Form>
+        </>
     );
 }
 
@@ -153,9 +156,8 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                     >
                         <i
                             onClick={toggleCompletion}
-                            className={`far ${
-                                item.completed ? 'fa-check-square' : 'fa-square'
-                            }`}
+                            className={`far ${item.completed ? 'fa-check-square' : 'fa-square'
+                                }`}
                         />
                     </Button>
                 </Col>
